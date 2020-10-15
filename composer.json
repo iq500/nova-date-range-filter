@@ -1,5 +1,6 @@
 {
   "name": "ampeco/nova-date-range-filter",
+  "version": "1.0",
   "description": "A Laravel Nova date range filter.",
   "keywords": [
     "laravel",
