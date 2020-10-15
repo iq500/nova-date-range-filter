@@ -1,6 +1,6 @@
 <?php
 
-namespace Ampeco\Filters;
+namespace Iq500\Filters;
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Events\ServingNova;
