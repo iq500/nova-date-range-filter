@@ -1,4 +1,4 @@
-## Date Range Filter for Laravel Nova
+## Date Range Filter for Laravel Nova (with localization support)
 
 Nova filter that displays a Date Range Picker instead of a select.
 
@@ -33,7 +33,7 @@ class DateRange extends DateRangeFilter
     // public function options(Request $request)
     // {
     //     return [
-    //         'firstDayOfWeek' => 0,
+    //         'locale' => 'default',
     //         'separator' => '-',
     //         'enableTime' => false,
     //         'enableSeconds' => false,
@@ -49,6 +49,6 @@ Use fluent interface to configure your DateRange filter
 
 ```php
 
-(new DateRange)->placeholder("Placeholder")->dateFormat("m d Y")
+(new DateRange)->placeholder("Placeholder")->dateFormat("m d Y")->locale('ru');
 
 ```

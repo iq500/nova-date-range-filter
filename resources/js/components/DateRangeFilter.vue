@@ -81,8 +81,8 @@ export default {
       return this.filter.enableSeconds
     },
 
-    firstDayOfWeek() {
-      return this.filter.firstDayOfWeek || 0
+    locale() {
+      return this.filter.locale || 'default';
     }
   },
 
@@ -104,10 +104,7 @@ export default {
         onReady() {
           self.$refs.datePicker.parentNode.classList.add('date-filter')
         },
-        locale: {
-          rangeSeparator: ` ${this.separator} `,
-          firstDayOfWeek: this.firstDayOfWeek
-        }
+        locale: this.locale,
       })
     })
   },
