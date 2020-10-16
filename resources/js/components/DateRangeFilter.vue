@@ -56,7 +56,7 @@ export default {
     },
     options() {
       return this.$store.getters[`${this.resourceName}/getOptionsForFilter`](
-        this.filterKey
+          this.filterKey
       )
     },
     disabled() {
@@ -102,15 +102,34 @@ export default {
           self.$refs.datePicker.parentNode.classList.add('date-filter')
         },
         locale: Russian,
+        maxDate: "today",
       })
     })
   },
 
   methods: {
     handleChange(value) {
+      const previousValue = this.filter.currentValue;
+      const bothValuesAreEmpty = previousValue.length === 0 && value.length === 0;
+
       value = value.map(value => {
         return flatpickr.formatDate(value, 'Y-m-d')
       });
+
+      if (value.length === 1) {
+        value[1] = value[0];
+      }
+
+      // fix to evade same value emmited twice which results in 'redundant navigation to current location' error
+      if (bothValuesAreEmpty
+          || value.length === 1
+          || (!bothValuesAreEmpty
+              && previousValue[0] === value[0]
+              && previousValue[1] === value[1])
+      ) {
+        return;
+      }
+
       this.$store.commit(`${this.resourceName}/updateFilterState`, {
         filterClass: this.filterKey,
         value,
