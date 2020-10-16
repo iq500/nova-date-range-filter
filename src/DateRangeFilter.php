@@ -22,9 +22,4 @@ abstract class DateRangeFilter extends Filter
     {
         return $this->withMeta(['placeholder' => $placeholder]);
     }
-
-    public function locale($locale)
-    {
-        return $this->withMeta(['locale' => $locale]);
-    }
 }

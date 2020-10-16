@@ -1,4 +1,4 @@
-## Date Range Filter for Laravel Nova (with localization support)
+## Date Range Filter for Laravel Nova (with Russian locale)
 
 Nova filter that displays a Date Range Picker instead of a select.
 
@@ -49,6 +49,6 @@ Use fluent interface to configure your DateRange filter
 
 ```php
 
-(new DateRange)->placeholder("Placeholder")->dateFormat("m d Y")->locale('ru');
+(new DateRange)->placeholder("Placeholder")->dateFormat("m d Y");
 
 ```

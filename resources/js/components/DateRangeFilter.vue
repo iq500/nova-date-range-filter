@@ -17,6 +17,7 @@
 </template>
 <script>
 import flatpickr from 'flatpickr'
+import { Russian } from "flatpickr/dist/l10n/ru.js"
 import '../../airbnb-modified.css'
 
 export default {
@@ -79,10 +80,6 @@ export default {
 
     enableSeconds() {
       return this.filter.enableSeconds
-    },
-
-    locale() {
-      return this.filter.locale || 'default';
     }
   },
 
@@ -104,7 +101,7 @@ export default {
         onReady() {
           self.$refs.datePicker.parentNode.classList.add('date-filter')
         },
-        locale: this.locale,
+        locale: Russian,
       })
     })
   },
