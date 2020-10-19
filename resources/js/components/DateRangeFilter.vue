@@ -63,7 +63,7 @@ export default {
       return this.filter.disabled
     },
     separator() {
-      return this.filter.separator || '-'
+      return this.filter.separator || '—'
     },
 
     dateFormat() {
